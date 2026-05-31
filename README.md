@@ -1,4 +1,4 @@
-# 🍕 Case Study #2 - Pizza Runner Operational Analytics
+# Case Study #2 - 🍕 Pizza Runner Operational Analytics
 
 ## 📌 Project Overview
 Danny was scrolling through his Instagram feed when he caught a brilliant idea: "80s Retro Styling and Pizza Is The Future!" So, he recruited runners to deliver fresh pizzas from his apartment, building a database capturing operations, customer transactions, and courier metrics. 
@@ -15,46 +15,6 @@ However, the operational data was captured with substantial inconsistencies, raw
 * **Database Management:** Schema DML/DDL generation, relational table design, Data Manipulation Language (DML) challenges
 
 ---
-
-## 🏗️ Relational Schema Design
-The project operates across a relational layout containing information on runners, orders, product recipes, and menu pricing.
-+-------------------+
-               |      RUNNERS      |
-               +-------------------+
-               | * runner_id (PK)  |
-               |   registration_date|
-               +---------+---------+
-                         |
-                         | 1
-                         |
-                         | M
-               +---------v---------+
-               |   RUNNER_ORDERS   |
-               +-------------------+
-               | * order_id (PK/FK)|
-               |   runner_id (FK)  |
-               |   pickup_time     |
-               |   distance_km     |
-               |   duration_mins   |
-               |   cancellation    |
-               +---------+---------+
-                         |
-
-+-------------------+      +---------v---------+      +-------------------+
-|  CUSTOMER_ORDERS  |      |    PIZZA_NAMES    |      |   PIZZA_RECIPES   |
-+-------------------+      +-------------------+      +-------------------+
-| * order_id (FK)   |M    1| * pizza_id (PK)   |1    1| * pizza_id (PK)   |
-|   customer_id     +------>   pizza_name      +------>   toppings        |
-|   pizza_id (FK)   |      +-------------------+      +-------------------+
-|   exclusions      |                                           |
-|   extras          |                                           | M
-|   order_time      |                                           |
-+-------------------+                                 +---------v---------+
-|  PIZZA_TOPPINGS   |
-+-------------------+
-| * topping_id (PK) |
-|   topping_name    |
-+-------------------+
 
 # 🧹 Enterprise Data Cleaning Stage (The ETL Pipeline)
 Real-world data is inherently messy. Before running corporate analytics, I isolated the staging architecture and built data cleaning filters to transform the core operational tables:
