@@ -54,6 +54,3 @@ Real-world data is inherently messy. Before running corporate analytics, I isola
 
 ---
 *Developed as a portfolio component highlighting core competency in business systems modeling, relational mapping, and intermediate-to-advanced SQL querying workflows.*
-                         | 1
-                         |
-                         | M
